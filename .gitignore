@@ -1,5 +1,6 @@
 /distrib
 /packages
+/downloaded_samples
 /__MACOSX
 native/*/work*
 cross/*/work*
@@ -10,6 +11,7 @@ wdpk/*/*.sign
 wdpk/*/*.xml
 
 wdpk/zerotier/bin/
+wdpk/*/.ssh/
 
 .env
 

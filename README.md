@@ -2,6 +2,10 @@
 
 I maintain this fork only for my own use, but share it if it is helpful for others. I build using the Dockerfile I have created mostly for OS5. Your milage may vary for other devices than WD My Cloud EX2 Ultra (the only one I own).
 
+**Custom packages added to this fork:**
+- **borgbackup** — BorgBackup deduplicating backup program with web UI for management
+- **persistent-ssh** — SSH authorized keys persistence with web UI for key management
+
 **Note**: This fork has a slightly modified Dockerfile that can be used to replace mksapkg outright (defaults to mksapkg-OS5). It is meant to be used directly from the repo with the `build-w-docker.sh` script (see for example in borgbackup.) By default, it will simply pull the correct mksapkg-docker package from my docker repo. To use simply do this:
 
 .. code::
