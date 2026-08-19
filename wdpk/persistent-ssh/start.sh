@@ -15,7 +15,7 @@ if [ -f "${APPDIR}/data/authorized_keys" ]; then
     chmod 600 /home/root/.ssh/authorized_keys
     echo "Restored authorized_keys from persistent storage" >> $log
 else
-    # Create empty authorized_keys if none exists yet
+    # Create empty authorized_keys if none exists yet, copy existing authorized_keys to persistent storage and make sure permissions are correct
     touch /home/root/.ssh/authorized_keys
     cat /home/root/.ssh/authorized_keys > ${APPDIR}/data/authorized_keys
     chmod 600 /home/root/.ssh/authorized_keys
