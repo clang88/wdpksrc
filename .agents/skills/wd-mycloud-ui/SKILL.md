@@ -196,7 +196,7 @@ Install the `.bin` on the device, then check the Apps page in the web UI. For qu
 | Page renders **below** the whole layout | Body was empty / JS-built. Make body static HTML; init in `page_load()`. |
 | Content in right place but **blank** | Shell didn't call `page_load()` (or scripts not loaded). Ensure the body fallback `$(document).ready` calls it. |
 | 404 on `language.js` / API | `init.sh` links to wrong path. Must be `/var/www/apps/<app>`. |
-| UI strings empty | `MULTI_LANGUAGE` index out of range of `lang_array`, or wrong `lang`/`datafld` in markup. |
+| UI strings empty | `MULTI_LANGUAGE` index out of range of `lang_array`, or wrong `lang`/`datafld` in markup. **Or the language XML is malformed** — an unescaped `&` (e.g. in a URL like `...?a=1&b=2`) makes the *whole* document fail to parse, so *every* string comes back blank. Escape `&` as `&amp;` (or wrap in CDATA). Validate with `xmllint --noout`. |
 | API returns auth error | `login_checker.php` include path wrong, or page opened outside the shell. |
 | App missing from Apps sidebar | `CenterType`/`IndividualFlag` in **apkg.rc** (not apkg.xml); rebuild. |
 

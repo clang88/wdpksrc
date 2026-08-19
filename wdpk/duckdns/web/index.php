@@ -37,7 +37,15 @@ function dd_load_config() {
 		},
 		success: function (r) {
 			if (r.success) {
-				$("#dd_url").val(r.url || "");
+				if (r.url) {
+					$("#dd_url").val(r.url);
+				} else {
+					// No config yet: prefill with the URL template
+					var template = _T_DD('_duckdns', 'template');
+					if (template != "") {
+						$("#dd_url").val(template);
+					}
+				}
 			} else {
 				dd_show_status(r.message || _T_DD('_duckdns', 'load_error'), "error");
 			}
@@ -51,6 +59,10 @@ function dd_save_config() {
 	// Basic client-side validation
 	if (url != "" && url.indexOf("https://www.duckdns.org/update?domains=") != 0) {
 		dd_show_status(_T_DD('_duckdns', 'invalid_url'), "error");
+		return;
+	}
+	if (url.indexOf("{domain}") != -1 || url.indexOf("{token}") != -1) {
+		dd_show_status(_T_DD('_duckdns', 'unreplaced_placeholders'), "error");
 		return;
 	}
 
@@ -109,7 +121,7 @@ function page_load() {
 </div>
 <div class="field_top">
 	<label for="dd_url" class="_text_dd" lang="_duckdns" datafld="label"></label>
-	<input type="text" id="dd_url" size="80" maxlength="512">
+	<input type="text" id="dd_url" maxlength="512">
 </div>
 <div class="field_top">
 	<span class="dd_help _text_dd" lang="_duckdns" datafld="help"></span>
@@ -132,6 +144,7 @@ $(document).ready(function () {
 </script>
 <style>
 #dd_url {
+	width: 100%;
 	padding: 6px 8px;
 	border: 1px solid #ccc;
 	border-radius: 3px;

@@ -82,8 +82,16 @@ switch ($action)
 		$url = isset($_POST['url']) ? trim($_POST['url']) : "";
 
 		// Validate: must be a DuckDNS update URL (or empty to clear)
-		if ($url != "" && strncmp($url, "https://www.duckdns.org/update?domains=", 41) != 0) {
-			$r->message = "Invalid URL. It must start with https://www.duckdns.org/update?domains=";
+		$prefix = "https://www.duckdns.org/update?domains=";
+		if ($url != "" && strncmp($url, $prefix, strlen($prefix)) != 0) {
+			$r->message = "Invalid URL. It must start with " . $prefix;
+			echo json_encode($r);
+			exit;
+		}
+
+		// Validate: the template placeholders must have been replaced
+		if (strpos($url, "{domain}") !== false || strpos($url, "{token}") !== false) {
+			$r->message = "Please replace {domain} and {token} with your actual values.";
 			echo json_encode($r);
 			exit;
 		}
