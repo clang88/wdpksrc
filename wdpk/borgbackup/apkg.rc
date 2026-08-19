@@ -1,0 +1,7 @@
+Package: borgbackup
+Version: 1.4.1
+AddonShowName: BorgBackup
+Packager: clang88
+Icon: BorgBackup.png
+Email: 
+Description: BorgBackup (short: Borg) is a deduplicating backup program. Optionally, it supports compression and authenticated encryption. The main goal of Borg is to provide an efficient and secure way to backup data.
