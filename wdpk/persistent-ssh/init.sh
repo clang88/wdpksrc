@@ -13,6 +13,6 @@ mkdir -p ${path}/data
 # link web UI
 WEBPATH="/var/www/persistent-ssh"
 mkdir -p $WEBPATH
-ln -sf $path/www/* $WEBPATH >> $log 2>&1
+ln -sf $path/web/* $WEBPATH >> $log 2>&1
 
 echo "Addon persistent-ssh (init.sh) done" >> $log

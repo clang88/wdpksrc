@@ -22,6 +22,6 @@ else
 fi
 
 # Create symlink for web UI
-ln -sf ${APPDIR}/www/persistent-ssh /var/www/
+ln -sf ${APPDIR}/web/* /var/www/persistent-ssh
 
 echo "Addon persistent-ssh (start.sh) done" >> $log
