@@ -10,14 +10,14 @@ echo "Building ${APP_NAME} version ${VERSION}"
 MODELS="MyCloudEX2Ultra" # WDMyCloudMirror WDMyCloud WDMyCloudEX4100 WDMyCloudDL4100 WDMyCloudEX2100 WDMyCloudDL2100 WDMyCloudMirrorGen2 MyCloudEX2Ultra MyCloudPR4100 MyCloudPR2100"
 
 for model in $MODELS; do
-  docker run --rm -v $PWD:/data/borgbackup -e MODEL=$model clang88/mksapkg:latest
+  docker run --rm -v $PWD:/data/${APP_NAME} -e MODEL=$model clang88/mksapkg:latest # Replace the tag with your own mksapkg if preferred
 done
 
 echo "Move binaries"
 
 RELEASE_DIR="../../packages/${APP_NAME}"
 mkdir -p "${RELEASE_DIR}"
-find .. -maxdepth 1 -name "*.bin*" | while read f; do mv "$f" "${f%.bin*}.bin"; done
+find . -maxdepth 1 -name "*.bin*" | while read f; do mv "$f" "${f%.bin*}.bin"; done # Strips the date after .bin
 mv ./*_${APP_NAME}_* "${RELEASE_DIR}"
 
 echo "Bundle sources"

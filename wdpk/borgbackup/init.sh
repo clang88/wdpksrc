@@ -2,14 +2,18 @@
 
 [ -f /tmp/debug_apkg ] && echo "APKG_DEBUG: $0 $@" >> /tmp/debug_apkg
 
-path=$1
+APKGDIR=$(readlink -f $1)
 log=/tmp/borgbackup.log
 
-echo "INIT linking files from path: $path" >> $log
+echo "INIT linking files from path: $APKGDIR" >> $log
+
+# Needs to have the same name as package... 
+# TODO: Maybe this can be a variable like APKG_MODULE?
+WEBPATH="/var/www/borgbackup"
 
 # create link to binary
-ln -sf $1/www/BorgBackup /var/www/
-chmod 755 $1/bin/borg
+ln -sf $APKGDIR/web $WEBPATH
+chmod 755 $APKGDIR/bin/borg
 
 # setup working directories
 mkdir -p /shares/Volume_1/Nas_Prog/borgbackup/TMP

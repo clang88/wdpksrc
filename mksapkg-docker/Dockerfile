@@ -1,11 +1,9 @@
-FROM debian:trixie-slim
+FROM debian:bullseye-slim
 
 RUN apt-get update && apt-get install -y \
-    curl \
-    libxml2 \
-    unzip
+    curl libxml2 unzip
 
-COPY mksapkg-OS5 /usr/bin/mksapkg
+COPY MyCloudOS5_mksapkg /usr/bin/mksapkg
 
 RUN chmod +x /usr/bin/mksapkg
 

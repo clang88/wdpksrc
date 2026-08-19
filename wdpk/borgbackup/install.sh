@@ -3,15 +3,15 @@
 [ -f /tmp/debug_apkg ] && echo "APKG_DEBUG: $0 $@" >> /tmp/debug_apkg
 
 path_src=$1
-NASPROG=$2
+path_dst=$2
 
 log=/tmp/debug_apkg
 
 APKG_MODULE="borgbackup"
-APKG_PATH="${NASPROG}/${APKG_MODULE}"
+APKG_PATH="${path_dst}/${APKG_MODULE}"
 
 # install all package scripts to the proper location
-cp -rf $path_src $NASPROG
+cp -rf $path_src $path_dst
 
 echo "Addon ${APKG_MODULE} (install.sh) done" >> $log
 
