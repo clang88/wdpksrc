@@ -17,7 +17,8 @@ log=/tmp/persistent-ssh.log
 # Remove the package directory
 rm -rf $path
 
-# Remove web symlink
+# Remove web symlinks
 rm -f /var/www/persistent-ssh
+rm -f /var/www/apps/persistent-ssh
 
 echo "Addon persistent-ssh (remove.sh) done" >> $log
