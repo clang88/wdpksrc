@@ -7,11 +7,11 @@ path_dst=$2
 
 log=/tmp/debug_apkg
 
-APKG_MODULE="borgbackup"
-APKG_PATH="${path_dst}/${APKG_MODULE}"
+APKG_NAME="borgbackup"
+APKG_PATH="${path_dst}/${APKG_NAME}"
 
 # install all package scripts to the proper location
 cp -rf $path_src $path_dst
 
-echo "Addon ${APKG_MODULE} (install.sh) done" >> $log
+echo "Addon ${APKG_NAME} (install.sh) done" >> $log
 

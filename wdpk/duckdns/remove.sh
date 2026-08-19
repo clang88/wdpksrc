@@ -1,8 +1,12 @@
 #!/bin/sh
 
+[ -f /tmp/debug_apkg ] && echo "APKG_DEBUG: $0 $@" >> /tmp/debug_apkg
 #$1 = Install_path
 
-rm -rf /var/www/duckdns 
+APKG_PATH=$1
+
+APKG_NAME="$(basename $APKG_PATH)"
+
 rm -rf /var/www/apps/duckdns 
 rm -f /usr/bin/duckdns > /dev/null
-rm -rf $1
+rm -rf $APKG_PATH
