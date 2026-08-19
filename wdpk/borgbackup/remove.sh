@@ -1,10 +1,27 @@
 #!/bin/sh
 
-#$1 = Install_path
+[ -f /tmp/debug_apkg ] && echo "APKG_DEBUG: $0 $@" >> /tmp/debug_apkg
 
-#cp -a $1/backup/BorgBackup /some/path
+path=$1
+log=/tmp/borgbackup.log
 
-rm -rf /var/www/BorgBackup 
+# create a backup of the borg data/config
+APKG_BACKUP_DIR="/shares/Volume_1/Nas_Prog/borgbackup_backup"
+mkdir -p ${APKG_BACKUP_DIR}
+
+if [ -d "/shares/Volume_1/Nas_Prog/borgbackup/BORG" ]; then
+    cp -a /shares/Volume_1/Nas_Prog/borgbackup/BORG ${APKG_BACKUP_DIR}/ 2>> $log
+    echo "Backup borg data to ${APKG_BACKUP_DIR}" >> $log
+fi
+
+# remove the package directory
+rm -rf $path
+
+# remove bin links
 rm -f /usr/bin/borg > /dev/null
 rm -f /usr/bin/borgfs > /dev/null
-rm -rf $1
+
+# remove web
+rm -rf /var/www/BorgBackup
+
+echo "Addon borgbackup (remove.sh) done" >> $log

@@ -1,5 +1,10 @@
-# Working with mksapkg docker
-* First build the docker image if not yet done:
+## Binary Source
+
+Pre-built ARM binaries for WD MyCloud are available from: https://borg.bauerj.eu/
+
+Place the downloaded `borg` binary in the `bin/` directory before building.
+
+## Working with mksapkg docker
 `docker build --platform linux/amd64 ../mksapkg-docker/. -t clang88/mksapkg`
 
 * Run the docker container like below from the repo root. It should contain an `app` folder with a subfolder that contains the bin, www, apkg.rc, apkg.xml and *.sh files. **Important!** MyCloud OS5 mksapkg expects the folder name to be exactly the same as what you wrote in your `apkg.rc` under `Package`. This means inside the `app`-Folder you should have only one folder with the exact name written in `apkg.rc`. There should be no other folders in that directory.

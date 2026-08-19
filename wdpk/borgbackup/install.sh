@@ -1,8 +1,17 @@
 #!/bin/sh
-# Example: module name is (MNAME) = utelnetd
-# default install path: (INST_PATH) = /mnt/HD/HD_a2/Nas_Prog/$MNAME == $2
-# default upload path: (UPLOAD_PATH) = /mnt/HD/HD_a2/Nas_Prog/_install == $1
 
+[ -f /tmp/debug_apkg ] && echo "APKG_DEBUG: $0 $@" >> /tmp/debug_apkg
 
-mv $1 $2
+path_src=$1
+NASPROG=$2
+
+log=/tmp/debug_apkg
+
+APKG_MODULE="borgbackup"
+APKG_PATH="${NASPROG}/${APKG_MODULE}"
+
+# install all package scripts to the proper location
+cp -rf $path_src $NASPROG
+
+echo "Addon ${APKG_MODULE} (install.sh) done" >> $log
 
