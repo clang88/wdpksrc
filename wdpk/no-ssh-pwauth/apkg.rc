@@ -1,0 +1,7 @@
+Package: no-ssh-pwauth
+Version: 1.00
+AddonShowName: Disable SSH password authentication
+Packager: clang88
+Icon: no-ssh-pwauth.png
+Email: 
+Description: Disable password authentication for SSH service (run after enabling SSH). This means you can't access the NAS SSH with a User + PW combination anymore. You will require a server-client key-pair. Needs to be re-run after SSH was disabled/reenabled.
