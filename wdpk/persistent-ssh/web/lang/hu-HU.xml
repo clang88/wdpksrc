@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text>
+	<_common>
+		<error len="999">Error</error>
+		<connection_error len="45">Connection Error</connection_error>
+		<set>Setting...</set>
+	</_common>
+	<_persistent_ssh>
+		<title len="999">Persistent SSH</title>
+		<desc len="999">Manage your SSH authorized keys. Changes are saved persistently and restored after reboot.</desc>
+		<label len="999">SSH Authorized Keys</label>
+		<placeholder len="999">Enter your SSH public keys (one per line)</placeholder>
+		<apply len="999">Apply Changes</apply>
+		<clear len="999">Clear All</clear>
+		<confirm_clear len="167">Are you sure you want to remove all SSH keys?</confirm_clear>
+		<saved len="167">Keys saved and restored successfully.</saved>
+		<load_error len="167">Error loading keys.</load_error>
+		<save_error len="167">Error saving keys.</save_error>
+		<auth_error len="167">Authentication required.</auth_error>
+	</_persistent_ssh>
+</text>

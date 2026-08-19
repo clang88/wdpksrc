@@ -17,6 +17,7 @@ if [ -f "${APPDIR}/data/authorized_keys" ]; then
 else
     # Create empty authorized_keys if none exists yet
     touch /home/root/.ssh/authorized_keys
+    cat /home/root/.ssh/authorized_keys > ${APPDIR}/data/authorized_keys
     chmod 600 /home/root/.ssh/authorized_keys
     echo "Created empty authorized_keys (no persistent keys found)" >> $log
 fi
