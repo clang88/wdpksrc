@@ -43,11 +43,13 @@ The build environment is also available in a docker image.
 **Note**: This fork has a slightly modified Dockerfile that can be used to replace mksapkg outright (defaults to mksapkg-OS5). It is meant to be used directly from the repo with the `build-w-docker.sh` script (see for example in borgbackup.) By default, it will simply pull the correct mksapkg-docker package from my docker repo. To use simply do this:
 
 .. code::
+
     cd wdpk/<somepackage>
     ./build-w-docker.sh
 
 If you prefer to build the docker image yourself:
 .. code::
+
     cd mksapkg-docker
     docker build . --platform linux/amd64 -t mksapkg
     cd wdpk/<somepackage>
