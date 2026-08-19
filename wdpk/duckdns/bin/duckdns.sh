@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Define the PID file
-PIDFILE="/home/root/duckdns.pid"
 APKG_MODULE=$1
+# Define the PID file
+PIDFILE="${APKG_MODULE}/duckdns.pid"
 
 # Configuration file with the DuckDNS update URL (domain + token).
 # Created and maintained by the web UI (web/config.php).
