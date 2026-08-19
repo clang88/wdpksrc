@@ -6,7 +6,7 @@
 session_start();
 
 // Check login
-include ($_SERVER['DOCUMENT_ROOT']."/web/lib/login_checker.php");
+include "/var/www/web/lib/login_checker.php";
 
 if (login_check() != 1)
 {

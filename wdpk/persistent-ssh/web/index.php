@@ -1,6 +1,6 @@
 <?php
 // Check if user is logged in via WD MyCloud session
-include ($_SERVER['DOCUMENT_ROOT']."/web/lib/login_checker.php");
+include "/var/www/web/lib/login_checker.php";
 
 if (login_check() != 1)
 {
