@@ -25,13 +25,13 @@ If you prefer to build the docker image yourself:
 Adjust the models you want to build in the `build-w-docker.sh` script. I only own the WD MyCloud EX2 Ultra, so I only build for that target.
 
 Apps added in this Repo:
-* borbackup (Just the borg binaries to be used via various scripts)
+* borbackup (Just the borg binaries to be used via various scripts i.e. `borg serve` triggered via ssh)
 * duckdns (Update duckdns registration via URL with domain and token)
 * persistent-ssh (Keep .ssh settings after reboot and manage authorized_keys via Web UI)
 * no-ssh-pwauth (Disable PW authentication when SSH is active to increase security)
 
 Todo:
-* At some point, I might explore making borg backup configurable based on the backup-apps already available on the store. That is however quite complex and I have no use for it atm, so might not happen any time soon.
+* [ ] make borgbackup more usable for backing up the NAS itself (I don't need it, so please don't hold your breath)
 
 # Upstream Readme when forked
 
