@@ -1,14 +1,17 @@
-FROM debian:buster
-LABEL maintainer="WDCommunity <https://github.com/wdcommunity>"
+FROM debian:trixie-slim
 
-ENV LANG C.UTF-8
+RUN apt-get update && apt-get install -y \
+    curl \
+    libxml2 \
+    unzip
 
-RUN apt-get update; \
-    apt-get install openssl git wget cmake libxml2 -y
+COPY mksaapkg-OS5 /usr/bin/mksapkg
+COPY mksaapkg-OS3 /usr/bin/mksapkg-OS3
 
-COPY mksapkg-OS* /usr/bin/
+RUN chmod +x /usr/bin/mksapkg
 
-# Volume pointing to spksrc sources
-VOLUME /wdpksrc
+COPY entrypoint.sh /usr/bin
 
-WORKDIR /wdpksrc
+WORKDIR /data
+
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
