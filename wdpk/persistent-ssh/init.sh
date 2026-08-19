@@ -10,8 +10,8 @@ echo "INIT linking files from path: $path" >> $log
 # create persistent storage directory for authorized_keys
 mkdir -p ${path}/data
 
-# link web UI
-WEBPATH="/var/www/persistent-ssh"
+# link web UI (WD convention: /var/www/apps/<module>)
+WEBPATH="/var/www/apps/persistent-ssh"
 mkdir -p $WEBPATH
 ln -sf $path/web/* $WEBPATH >> $log 2>&1
 
