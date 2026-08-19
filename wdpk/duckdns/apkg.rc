@@ -1,0 +1,19 @@
+Package:	    duckdns
+Section:	    Addon
+Version:	    1.1
+Packager:	    clang88
+Email:		    
+Homepage:	    https://github.com/WDCommunity/wdpksrc
+Description:	Dynamic DNS service via DuckDNS. Configure your DuckDNS domain and token in the web UI.
+Icon:	        duckdns.png
+AddonShowName:	DuckDNS
+AddonIndexPage:	index.php
+AddonUsedPort:
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+CenterType:     1
+MinFWVer:
+MaxFWVer:
+IndividualFlag: 1
