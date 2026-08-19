@@ -47,7 +47,8 @@ The build environment is also available in a docker image.
     cd wdpk/<somepackage>
     ./build-w-docker.sh
 
-If you prefer to build the docker image yourself:
+If you prefer to build the docker image yourself:  
+
 .. code::
 
     cd mksapkg-docker
