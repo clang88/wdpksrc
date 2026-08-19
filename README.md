@@ -1,6 +1,26 @@
-# NOTE by fork maintainer
+# Fork Readme
 
 I maintain this fork only for my own use, but share it if it is helpful for others. I build using the Dockerfile I have created mostly for OS5. Your milage may vary for other devices than WD My Cloud EX2 Ultra (the only one I own).
+
+**Note**: This fork has a slightly modified Dockerfile that can be used to replace mksapkg outright (defaults to mksapkg-OS5). It is meant to be used directly from the repo with the `build-w-docker.sh` script (see for example in borgbackup.) By default, it will simply pull the correct mksapkg-docker package from my docker repo. To use simply do this:
+
+.. code::
+
+    cd wdpk/<somepackage>
+    ./build-w-docker.sh
+
+If you prefer to build the docker image yourself:  
+
+.. code::
+
+    cd mksapkg-docker
+    docker build . --platform linux/amd64 -t mksapkg
+    cd wdpk/<somepackage>
+    ./build-w-docker.sh # Make sure to set your own tag in the docker command
+
+Adjust the models you want to build in the `build-w-docker.sh` script. I only own the WD MyCloud EX2 Ultra, so I only build for that target.
+
+# Upstream Readme when forked
 
 # ANNOUNCEMENT AUG 2020
 
@@ -39,24 +59,6 @@ The build environment is also available in a docker image.
     docker run -it -v $(pwd):/wdpksrc wdpk /bin/bash    
     cd wdpk/<somepackage>    
     ./build.sh
-
-**Note**: This fork has a slightly modified Dockerfile that can be used to replace mksapkg outright (defaults to mksapkg-OS5). It is meant to be used directly from the repo with the `build-w-docker.sh` script (see for example in borgbackup.) By default, it will simply pull the correct mksapkg-docker package from my docker repo. To use simply do this:
-
-.. code::
-
-    cd wdpk/<somepackage>
-    ./build-w-docker.sh
-
-If you prefer to build the docker image yourself:  
-
-.. code::
-
-    cd mksapkg-docker
-    docker build . --platform linux/amd64 -t mksapkg
-    cd wdpk/<somepackage>
-    ./build-w-docker.sh # Make sure to set your own tag in the docker command
-
-Adjust the models you want to build in the `build-w-docker.sh` script. I only own the WD MyCloud EX2 Ultra, so I only build for that target.
     
 ### Build and deploy test
 
