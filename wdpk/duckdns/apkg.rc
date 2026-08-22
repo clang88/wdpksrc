@@ -2,7 +2,7 @@ Package:	    duckdns
 Section:	    Addon
 Version:	    1.1
 Packager:	    clang88
-Email:		    
+Email:
 Homepage:	    https://github.com/WDCommunity/wdpksrc
 Description:	Dynamic DNS service via DuckDNS. Configure your DuckDNS domain and token in the web UI.
 Icon:	        duckdns.png

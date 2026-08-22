@@ -2,7 +2,7 @@ Package:	    persistent-ssh
 Section:	    Addon
 Version:	    2.0
 Packager:	    clang88
-Email:		    
+Email:
 Homepage:	    https://github.com/WDCommunity/wdpksrc
 Description:	Keeps the root .ssh directory between reboots and lets you manage SSH authorized keys from the web UI. Original code by Felipe Contreras, modified by clang88.
 Icon:	        persistent-ssh.png

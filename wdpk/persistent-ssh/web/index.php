@@ -10,12 +10,11 @@ SPDX-License-Identifier: GPL-2.0-or-later
 <meta http-equiv="PRAGMA" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="Cache-Control" content="no-cache">
-</head>
-<body>
 <script type="text/javascript" src="/apps/persistent-ssh/language.js"></script>
 <script type="text/javascript">
 
 var PS_API_URL = "/apps/persistent-ssh/authorized_keys.php";
+var PS_LOADED = false;
 
 function ps_show_status(msg, type) {
 	var cls = (type == "error") ? "error" : "success";
@@ -73,26 +72,13 @@ function ps_clear_keys() {
 	}
 }
 
-$(document).ready(function () {
+/* Called by the WD web UI shell after the page content is injected
+ * into the content area. */
+function page_load() {
+	if (PS_LOADED) return;
+	PS_LOADED = true;
+
 	ps_ready_language();
-
-	var html = "";
-	html += "<div class=\"ps_container\">";
-	html += "<h2 class=\"_text_ps\" lang=\"_persistent_ssh\" datafld=\"title\"></h2>";
-	html += "<p class=\"ps_desc _text_ps\" lang=\"_persistent_ssh\" datafld=\"desc\"></p>";
-	html += "<div class=\"ps_form_group\">";
-	html += "<label for=\"ps_keys\" class=\"_text_ps\" lang=\"_persistent_ssh\" datafld=\"label\"></label>";
-	html += "<textarea id=\"ps_keys\" rows=\"12\"></textarea>";
-	html += "</div>";
-	html += "<div class=\"ps_actions\">";
-	html += "<button id=\"ps_apply\" class=\"btn\" onclick=\"ps_save_keys()\"><span class=\"_text_ps\" lang=\"_persistent_ssh\" datafld=\"apply\"></span></button>";
-	html += "<button id=\"ps_clear\" class=\"btn btn_secondary\" onclick=\"ps_clear_keys()\"><span class=\"_text_ps\" lang=\"_persistent_ssh\" datafld=\"clear\"></span></button>";
-	html += "</div>";
-	html += "<div id=\"ps_status\" class=\"ps_status hidden\"></div>";
-	html += "</div>";
-
-	$("body").append(html);
-	ps_language();
 
 	// Set placeholder text for the textarea
 	var placeholder = _T_PS('_persistent_ssh', 'placeholder');
@@ -101,26 +87,41 @@ $(document).ready(function () {
 	}
 
 	ps_load_keys();
-});
+}
 
 </script>
+<body>
+<div class="h1_content header_2">
+	<span class="_text_ps" lang="_persistent_ssh" datafld="title"></span>
+</div>
+<div class="field_top">
+	<span class="_text_ps" lang="_persistent_ssh" datafld="desc"></span>
+</div>
+<div class="hr_0_content">
+	<div class="hr_1"></div>
+</div>
+<div class="field_top">
+	<label for="ps_keys" class="_text_ps" lang="_persistent_ssh" datafld="label"></label>
+	<textarea id="ps_keys" rows="12"></textarea>
+</div>
+<div class="field_top">
+	<button type="button" id="ps_apply" onclick="ps_save_keys()">
+		<span class="_text_ps" lang="_persistent_ssh" datafld="apply"></span>
+	</button>
+	<button type="button" id="ps_clear" onclick="ps_clear_keys()">
+		<span class="_text_ps" lang="_persistent_ssh" datafld="clear"></span>
+	</button>
+</div>
+<div id="ps_status" class="ps_status hidden"></div>
+<script type="text/javascript">
+/* Fallback: if the WD shell did not call page_load() for us,
+ * initialize when the document is ready. */
+$(document).ready(function () {
+	if (typeof page_load == "function") page_load();
+});
+</script>
 <style>
-.ps_container {
-	padding: 10px 20px;
-}
-.ps_container h2 {
-	margin-bottom: 8px;
-}
-.ps_desc {
-	margin-bottom: 16px;
-	color: #666;
-}
-.ps_form_group label {
-	display: block;
-	margin-bottom: 6px;
-	font-weight: bold;
-}
-.ps_form_group textarea {
+#ps_keys {
 	width: 100%;
 	padding: 8px;
 	border: 1px solid #ccc;
@@ -129,13 +130,8 @@ $(document).ready(function () {
 	font-size: 13px;
 	resize: vertical;
 }
-.ps_actions {
-	margin-top: 12px;
-}
-.ps_actions button {
+#ps_apply, #ps_clear {
 	margin-right: 8px;
-	padding: 6px 16px;
-	cursor: pointer;
 }
 .ps_status {
 	margin-top: 12px;
