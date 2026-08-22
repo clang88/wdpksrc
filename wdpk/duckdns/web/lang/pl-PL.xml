@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text>
+	<_common>
+		<error len="999">Error</error>
+		<connection_error len="45">Connection Error</connection_error>
+		<set>Setting...</set>
+	</_common>
+	<_duckdns>
+		<title len="999">DuckDNS</title>
+		<desc len="999">Dynamic DNS via DuckDNS. Your public IP is announced to DuckDNS every 5 minutes.</desc>
+		<label len="999">DuckDNS Update URL</label>
+		<help len="999">
+			<![CDATA[
+			Enter the full DuckDNS update URL. Format: https://www.duckdns.org/update?domains={domain}&token={token}&ip=
+			Replace {domain} with your DuckDNS domain name and {token} with the token from your DuckDNS account.
+			]]>
+		</help>
+		<placeholder len="999">https://www.duckdns.org/update?domains=your-domain&amp;token=your-token&amp;ip=</placeholder>
+		<template len="999">https://www.duckdns.org/update?domains={domain}&amp;token={token}&amp;ip=</template>
+		<apply len="999">Apply Changes</apply>
+		<clear len="999">Clear</clear>
+		<confirm_clear len="167">Are you sure you want to remove the DuckDNS configuration?</confirm_clear>
+		<saved len="167">Configuration saved. The new URL is used from the next update cycle.</saved>
+		<invalid_url len="167">The URL must start with https://www.duckdns.org/update?domains=</invalid_url>
+		<unreplaced_placeholders len="167">Please replace {domain} and {token} with your actual values.</unreplaced_placeholders>
+		<load_error len="167">Error loading configuration.</load_error>
+		<save_error len="167">Error saving configuration.</save_error>
+		<auth_error len="167">Authentication required.</auth_error>
+	</_duckdns>
+</text>
