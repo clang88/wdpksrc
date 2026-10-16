@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text>
+	<_common>
+		<error len="999">Fout</error>
+		<connection_error len="45">Verbindingsfout</connection_error>
+		<set>Instelling...</set>
+	</_common>
+	<_no_ssh_pwauth>
+		<title len="999">Schakel SSH-wachtwoordauthenticatie uit</title>
+		<desc len="999">Configureer SSH-wachtwoordauthenticatie-instellingen. De app handhaaft periodiek deze instellingen om te voorkomen dat andere apps ze wijzigen.</desc>
+		<pw_auth_label len="999">Wachtwoordauthenticatie</pw_auth_label>
+		<empty_pw_label len="999">Lege wachtwoorden toestaan</empty_pw_label>
+		<enabled len="999">Ingeschakeld</enabled>
+		<disabled len="999">Uitgeschakeld</disabled>
+		<interval_label len="999">Controle-interval</interval_label>
+		<interval_unit len="999">seconden</interval_unit>
+		<save len="999">Opslaan</save>
+		<saved len="167">Instellingen opgeslagen en afgedwongen.</saved>
+		<load_error len="167">Fout bij het laden van instellingen.</load_error>
+		<save_error len="167">Fout bij het opslaan van instellingen.</save_error>
+		<apply_error len="167">Fout bij het toepassen van instellingen.</apply_error>
+		<auth_error len="167">Authenticatie vereist.</auth_error>
+	</_no_ssh_pwauth>
+</text>

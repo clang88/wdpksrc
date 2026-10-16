@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text>
+	<_common>
+		<error len="999">Erro</error>
+		<connection_error len="45">Erro de conexão</connection_error>
+		<set>Configurando...</set>
+	</_common>
+	<_no_ssh_pwauth>
+		<title len="999">Desativar autenticação por senha SSH</title>
+		<desc len="999">Configure as configurações de autenticação por senha SSH. O aplicativo aplica periodicamente essas configurações para evitar que outros aplicativos as alterem.</desc>
+		<pw_auth_label len="999">Autenticação por senha</pw_auth_label>
+		<empty_pw_label len="999">Permitir senhas vazias</empty_pw_label>
+		<enabled len="999">Ativado</enabled>
+		<disabled len="999">Desativado</disabled>
+		<interval_label len="999">Intervalo de verificação</interval_label>
+		<interval_unit len="999">segundos</interval_unit>
+		<save len="999">Salvar</save>
+		<saved len="167">Configurações salvas e aplicadas.</saved>
+		<load_error len="167">Erro ao carregar as configurações.</load_error>
+		<save_error len="167">Erro ao salvar as configurações.</save_error>
+		<apply_error len="167">Erro ao aplicar as configurações.</apply_error>
+		<auth_error len="167">Autenticação necessária.</auth_error>
+	</_no_ssh_pwauth>
+</text>

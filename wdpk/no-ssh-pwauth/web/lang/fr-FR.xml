@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text>
+	<_common>
+		<error len="999">Error</error>
+		<connection_error len="45">Connexion error</connection_error>
+		<set>Paramètres...</set>
+	</_common>
+	<_no_ssh_pwauth>
+		<title len="999">Désactiver l'authentification par mot de passe SSH</title>
+		<desc len="999">Configurez les paramètres d'authentification par mot de passe SSH. L'application renforce périodiquement ces paramètres pour empêcher d'autres applications de les modifier.</desc>
+		<pw_auth_label len="999">Authentification par mot de passe</pw_auth_label>
+		<empty_pw_label len="999">Autoriser les mots de passe vides</empty_pw_label>
+		<enabled len="999">Activé</enabled>
+		<disabled len="999">Désactivé</disabled>
+		<interval_label len="999">Intervalle de vérification</interval_label>
+		<interval_unit len="999">secondes</interval_unit>
+		<save len="999">Enregistrer</save>
+		<saved len="167">Paramètres enregistrés et appliqués.</saved>
+		<load_error len="167">Erreur lors du chargement des paramètres.</load_error>
+		<save_error len="167">Erreur lors de l'enregistrement des paramètres.</save_error>
+		<apply_error len="167">Erreur lors de l'application des paramètres.</apply_error>
+		<auth_error len="167">Authentification requise.</auth_error>
+	</_no_ssh_pwauth>
+</text>

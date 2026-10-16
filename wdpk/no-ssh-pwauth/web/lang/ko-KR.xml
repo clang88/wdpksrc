@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text>
+	<_common>
+		<error len="999">오류</error>
+		<connection_error len="45">연결 오류</connection_error>
+		<set>설정 중...</set>
+	</_common>
+	<_no_ssh_pwauth>
+		<title len="999">SSH 비밀번호 인증 비활성화</title>
+		<desc len="999">SSH 비밀번호 인증 설정을 구성합니다. 앱은 다른 앱이 변경하지 않도록 주기적으로 이러한 설정을 적용합니다.</desc>
+		<pw_auth_label len="999">비밀번호 인증</pw_auth_label>
+		<empty_pw_label len="999">빈 비밀번호 허용</empty_pw_label>
+		<enabled len="999">활성화됨</enabled>
+		<disabled len="999">비활성화됨</disabled>
+		<interval_label len="999">체크 간격</interval_label>
+		<interval_unit len="999">초</interval_unit>
+		<save len="999">저장</save>
+		<saved len="167">설정이 저장되고 적용되었습니다.</saved>
+		<load_error len="167">설정 로드 오류.</load_error>
+		<save_error len="167">설정 저장 오류.</save_error>
+		<apply_error len="167">설정 적용 오류.</apply_error>
+		<auth_error len="167">인증이 필요합니다.</auth_error>
+	</_no_ssh_pwauth>
+</text>

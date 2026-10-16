@@ -1,7 +1,19 @@
-Package: no-ssh-pwauth
-Version: 1.00
-AddonShowName: Disable SSH password authentication
-Packager: clang88
-Icon: no-ssh-pwauth.png
+Package:	    no-ssh-pwauth
+Section:	    Addon
+Version:	    1.1
+Packager:	    clang88
 Email:
-Description: Disable password authentication for SSH service (run after enabling SSH). This means you can't access the NAS SSH with a User + PW combination anymore. You will require a server-client key-pair. Needs to be re-run after SSH was disabled/reenabled.
+Homepage:	    https://github.com/WDCommunity/wdpksrc
+Description:	Enforce disabled SSH password authentication and permit empty passwords. Includes a web config page with toggles and periodic re-checking.
+Icon:	        no-ssh-pwauth.png
+AddonShowName:	Disable SSH password authentication
+AddonIndexPage:	index.php
+AddonUsedPort:
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+CenterType:     1
+MinFWVer:
+MaxFWVer:
+IndividualFlag: 1

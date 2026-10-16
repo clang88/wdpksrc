@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text>
+	<_common>
+		<error len="999">错误</error>
+		<connection_error len="45">连接错误</connection_error>
+		<set>设置中...</set>
+	</_common>
+	<_no_ssh_pwauth>
+		<title len="999">禁用SSH密码认证</title>
+		<desc len="999">配置SSH密码认证设置。应用定期强制执行这些设置，以防止其他应用更改它们。</desc>
+		<pw_auth_label len="999">密码认证</pw_auth_label>
+		<empty_pw_label len="999">允许空密码</empty_pw_label>
+		<enabled len="999">已启用</enabled>
+		<disabled len="999">已禁用</disabled>
+		<interval_label len="999">检查间隔</interval_label>
+		<interval_unit len="999">秒</interval_unit>
+		<save len="999">保存</save>
+		<saved len="167">设置已保存并强制执行。</saved>
+		<load_error len="167">加载设置时出错。</load_error>
+		<save_error len="167">保存设置时出错。</save_error>
+		<apply_error len="167">应用设置时出错。</apply_error>
+		<auth_error len="167">需要认证。</auth_error>
+	</_no_ssh_pwauth>
+</text>

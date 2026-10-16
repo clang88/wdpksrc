@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text>
+	<_common>
+		<error len="999">Hiba</error>
+		<connection_error len="45">Bağlantı Hatası</connection_error>
+		<set>Ayarlanıyor...</set>
+	</_common>
+	<_no_ssh_pwauth>
+		<title len="999">SSH şifre kimlik doğrulamayı devre dışı bırak</title>
+		<desc len="999">SSH şifre kimlik doğrulama ayarlarını yapılandırın. Uygulama, diğer uygulamaların değiştirmesini önlemek için bu ayarları periyodik olarak uygular.</desc>
+		<pw_auth_label len="999">Şifre kimlik doğrulaması</pw_auth_label>
+		<empty_pw_label len="999">Boş şifrelere izin ver</empty_pw_label>
+		<enabled len="999">Etkin</enabled>
+		<disabled len="999">Devre dışı</disabled>
+		<interval_label len="999">Kontrol aralığı</interval_label>
+		<interval_unit len="999">saniye</interval_unit>
+		<save len="999">Kaydet</save>
+		<saved len="167">Ayarlar kaydedildi ve uygulandı.</saved>
+		<load_error len="167">Ayarlar yüklenirken hata oluştu.</load_error>
+		<save_error len="167">Ayarlar kaydedilirken hata oluştu.</save_error>
+		<apply_error len="167">Ayarlar uygulanırken hata oluştu.</apply_error>
+		<auth_error len="167">Kimlik doğrulama gerekli.</auth_error>
+	</_no_ssh_pwauth>
+</text>

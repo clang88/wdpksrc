@@ -6,22 +6,21 @@ APKGDIR=$(readlink -f $1)
 APKG_NAME=$(basename $1)
 log=/tmp/debug_apkg
 
-echo "INIT linking files from path: $APKGDIR" >> $log
+echo "INIT deploying files from path: $APKGDIR" >> $log
 
-# create link to web
-WEBPATH="/var/www/$APKG_NAME"
-ln -sf $APKGDIR/web $WEBPATH
+# Deploy web UI (WD convention for CenterType=1: /var/www/apps/<module>)
+WEBPATH="/var/www/apps/${APKG_NAME}"
+mkdir -p "$WEBPATH"
+ln -sf "$APKGDIR/web"/* "$WEBPATH" >> $log 2>&1
 
-# backup original sshd_config
-cp -a /etc/ssh/sshd_config $APKGDIR/backup
+# Create persistent storage directory for config
+CONFIG_DIR="/shares/Volume_1/Nas_Prog/${APKG_NAME}/config"
+mkdir -p "$CONFIG_DIR"
 
-# disable password authentication
-sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
-sed -i 's/PermitEmptyPasswords yes/PermitEmptyPasswords no/g' /etc/ssh/sshd_config
-
-# reload sshd
-if [ -f /var/run/sshd.pid ]; then
-    kill -HUP $(cat /var/run/sshd.pid)
+# Copy default config if not present
+if [ ! -f "$CONFIG_DIR/no-ssh-pwauth.conf" ]; then
+    cp -a "$APKGDIR/config/no-ssh-pwauth.conf" "$CONFIG_DIR/no-ssh-pwauth.conf"
+    echo "Copied default config to $CONFIG_DIR/no-ssh-pwauth.conf" >> $log
 fi
 
 echo "Addon $APKG_NAME (init.sh) done" >> $log

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text>
+	<_common>
+		<error len="999">Chyba</error>
+		<connection_error len="45">Chyba připojení</connection_error>
+		<set>Nastavení...</set>
+	</_common>
+	<_no_ssh_pwauth>
+		<title len="999">Zakázat ověřování heslem SSH</title>
+		<desc len="999">Nastavte parametry ověřování heslem SSH. Aplikace periodicky vynucuje tyto nastavení, aby zabránila jejich změně jinými aplikacemi.</desc>
+		<pw_auth_label len="999">Ověřování heslem</pw_auth_label>
+		<empty_pw_label len="999">Povolit prázdná hesla</empty_pw_label>
+		<enabled len="999">Povoleno</enabled>
+		<disabled len="999">Zakázáno</disabled>
+		<interval_label len="999">Interval kontroly</interval_label>
+		<interval_unit len="999">sekund</interval_unit>
+		<save len="999">Uložit</save>
+		<saved len="167">Nastavení uloženo a vynuceno.</saved>
+		<load_error len="167">Chyba při načítání nastavení.</load_error>
+		<save_error len="167">Chyba při ukládání nastavení.</save_error>
+		<apply_error len="167">Chyba při aplikaci nastavení.</apply_error>
+		<auth_error len="167">Vyžadováno ověření.</auth_error>
+	</_no_ssh_pwauth>
+</text>
